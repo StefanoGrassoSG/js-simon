@@ -11,6 +11,10 @@ getStart.addEventListener('click', function(){
     const numberArray = [];
     addNumbers(5, 1, 5, numberArray);
     createElement(numberArray);
+    const squares = document.querySelectorAll('.square')
+    for(i = 0; i < squares.length; i++) {
+        squares[i].classList.add('visible')
+    }
 })
 
 
@@ -54,5 +58,5 @@ function createElement(array) {
         newDiv.append(array[i]);
         newDiv.classList.add('square')
     }
-
+    
 }

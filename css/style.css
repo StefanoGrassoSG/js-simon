@@ -47,4 +47,9 @@ header {
     font-size: 30px;
     font-weight: bold;
     font-family: 'Courier New', Courier, monospace;
+    opacity: 0;
+}
+
+.visible {
+    opacity: 1;
 }
