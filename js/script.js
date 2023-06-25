@@ -2,7 +2,7 @@ const getStart = document.getElementById('start')
 const myContainer = document.querySelector('.numbers');
 
 const userNumbers = []
-
+const correct = [];
 
 
 
@@ -24,12 +24,16 @@ getStart.addEventListener('click', function(){
             let info4 = prompt('insert numbers')
             let info5 = prompt('insert numbers')
             userNumbers.push(info1, info2, info3, info4, info5);
+            console.log(numberArray)
             console.log(userNumbers)
-            for(let i = 0; i < numberArray.length; ++i){
-                if(numberArray[i] == info1 || numberArray[i] == info2 || numberArray[i] == info3 || numberArray[i] == info4 || numberArray[i] == info5)
-                 score++;
-               }
-            document.querySelector('.score-bar').append(score);
+            for(i = 0; i < numberArray.length; i++) {
+                if(numberArray[i] == userNumbers[i]) {
+                    score++
+                    correct.push(userNumbers[i]);
+                }
+            }
+            document.querySelector('.scores').innerHTML = "YOUR SCORE: " + score;
+            document.querySelector('.number').innerHTML = "CORRECT NUMBERS: " + correct;
         },
         4000,
        );
